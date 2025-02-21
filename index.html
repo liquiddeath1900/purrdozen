@@ -28,10 +28,10 @@
     <!-- Signup Form -->
     <div class="w-full max-w-sm sm:max-w-md md:max-w-xl mx-auto px-4">
         <form id="signupForm" class="bg-white rounded-lg p-4 sm:p-6 shadow-lg">
-            <div class="space-y-3 sm:space-y-4">
+            <div class="space-y-6 sm:space-y-8">
                 <!-- Email -->
                 <div>
-                    <label for="email" class="block text-gray-700 font-medium mb-1 text-sm sm:text-base">Email Address*</label>
+                    <label for="email" class="block text-gray-700 font-medium mb-2 text-sm sm:text-base">Email Address*</label>
                     <input 
                         type="email" 
                         id="email"
@@ -40,6 +40,91 @@
                         class="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                         placeholder="your@email.com"
                     >
+                </div>
+
+                <!-- Treats -->
+                <div>
+                    <label class="block text-gray-700 font-medium mb-3 text-sm sm:text-base">Which treats interest you most?*</label>
+                    <div class="space-y-3">
+                        <label class="flex items-start">
+                            <input type="checkbox" name="treats" value="Classic Cookies" class="mt-1 mr-2">
+                            <span class="text-sm sm:text-base">Classic Cookies (Chocolate Chip, Brown Butter Shortbread, Cardamom Snickerdoodle)</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" name="treats" value="Artisanal Muffins" class="mt-1 mr-2">
+                            <span class="text-sm sm:text-base">Artisanal Muffins (Blueberry-Lemon, Double Chocolate, Chai-Spiced Apple)</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" name="treats" value="Specialty Desserts" class="mt-1 mr-2">
+                            <span class="text-sm sm:text-base">Specialty Desserts (Tres Leches, Tiramisu)</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" name="treats" value="Mix-and-Match Boxes" class="mt-1 mr-2">
+                            <span class="text-sm sm:text-base">Mix-and-Match Boxes</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Size -->
+                <div>
+                    <label for="size" class="block text-gray-700 font-medium mb-2 text-sm sm:text-base">What size portions interest you most?*</label>
+                    <select 
+                        id="size"
+                        name="size"
+                        required
+                        class="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    >
+                        <option value="">Select an option</option>
+                        <option value="Bite-sized/Mini portions">Bite-sized/Mini portions (perfect for sampling and sharing)</option>
+                        <option value="Regular/Full-sized portions">Regular/Full-sized portions</option>
+                        <option value="Both">Both - I'd mix it up depending on the occasion</option>
+                    </select>
+                </div>
+
+                <!-- Occasions -->
+                <div>
+                    <label class="block text-gray-700 font-medium mb-3 text-sm sm:text-base">For what occasions would you order?*</label>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="checkbox" name="occasions" value="Office/Team treats" class="mr-2">
+                            <span class="text-sm sm:text-base">Office/Team treats</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="occasions" value="Special celebrations" class="mr-2">
+                            <span class="text-sm sm:text-base">Special celebrations (birthdays, events)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="occasions" value="Weekly personal treats" class="mr-2">
+                            <span class="text-sm sm:text-base">Weekly personal treats</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="occasions" value="Gifts for others" class="mr-2">
+                            <span class="text-sm sm:text-base">Gifts for others</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="occasions" value="Catering/Large events" class="mr-2">
+                            <span class="text-sm sm:text-base">Catering/Large events</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pricing -->
+                <div>
+                    <label for="pricing" class="block text-gray-700 font-medium mb-2 text-sm sm:text-base">Our "Purr-fect Bites Box" includes 6 bite-sized cookies, 6 mini muffins, and 6 tres leches cups for $38. Would this interest you?*</label>
+                    <select 
+                        id="pricing"
+                        name="pricing"
+                        required
+                        class="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    >
+                        <option value="">Select an option</option>
+                        <option value="Yes, perfect price point">Yes, perfect price point</option>
+                        <option value="Yes, but I'd prefer a lower price">Yes, but I'd prefer a lower price</option>
+                        <option value="No, I'd prefer to order items separately">No, I'd prefer to order items separately</option>
+                        <option value="No, I'd prefer different combinations">No, I'd prefer different combinations</option>
+                    </select>
+                </div>
+            </div>
 
                 <!-- Treats -->
                 <div>
