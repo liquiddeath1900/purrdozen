@@ -6,7 +6,7 @@
     <title>Purrdozen</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen flex flex-col items-center pt-4 sm:pt-6 md:pt-8 bg-[#6C3B9B]">
+<body class="min-h-screen flex flex-col items-center pt-4 sm:pt-6 md:pt-8 bg-[#6C3B9B] pb-8">
     <!-- Logo Container -->
     <div class="mb-4 sm:mb-6 md:mb-8 w-full flex justify-center px-4">
         <div class="w-full max-w-md sm:max-w-lg md:max-w-xl">
@@ -26,8 +26,8 @@
     </div>
 
     <!-- Signup Form -->
-    <div class="w-full max-w-sm sm:max-w-md md:max-w-xl mx-auto px-4">
-        <form id="signupForm" class="bg-white rounded-lg p-4 sm:p-6 shadow-lg">
+    <div class="w-full max-w-sm sm:max-w-md md:max-w-xl mx-auto px-4 mb-8">
+        <form id="signupForm" class="bg-white rounded-lg p-6 shadow-lg">
             <div class="space-y-6 sm:space-y-8">
                 <!-- Email -->
                 <div>
@@ -126,96 +126,14 @@
                 </div>
             </div>
 
-                <!-- Treats -->
-                <div>
-                    <label class="block text-gray-700 font-medium mb-1">Which treats interest you most?*</label>
-                    <div class="space-y-2">
-                        <label class="flex items-center">
-                            <input type="checkbox" name="treats" value="Classic Cookies" class="mr-2">
-                            Classic Cookies (Chocolate Chip, Brown Butter Shortbread, Cardamom Snickerdoodle)
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" name="treats" value="Artisanal Muffins" class="mr-2">
-                            Artisanal Muffins (Blueberry-Lemon, Double Chocolate, Chai-Spiced Apple)
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" name="treats" value="Specialty Desserts" class="mr-2">
-                            Specialty Desserts (Tres Leches, Tiramisu)
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" name="treats" value="Mix-and-Match Boxes" class="mr-2">
-                            Mix-and-Match Boxes
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Size -->
-                <div>
-                    <label for="size" class="block text-gray-700 font-medium mb-1">What size portions interest you most?*</label>
-                    <select 
-                        id="size"
-                        name="size"
-                        required
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    >
-                        <option value="">Select an option</option>
-                        <option value="Bite-sized/Mini portions">Bite-sized/Mini portions (perfect for sampling and sharing)</option>
-                        <option value="Regular/Full-sized portions">Regular/Full-sized portions</option>
-                        <option value="Both">Both - I'd mix it up depending on the occasion</option>
-                    </select>
-                </div>
-
-                <!-- Occasions -->
-                <div>
-                    <label class="block text-gray-700 font-medium mb-1">For what occasions would you order?*</label>
-                    <div class="space-y-2">
-                        <label class="flex items-center">
-                            <input type="checkbox" name="occasions" value="Office/Team treats" class="mr-2">
-                            Office/Team treats
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" name="occasions" value="Special celebrations" class="mr-2">
-                            Special celebrations (birthdays, events)
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" name="occasions" value="Weekly personal treats" class="mr-2">
-                            Weekly personal treats
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" name="occasions" value="Gifts for others" class="mr-2">
-                            Gifts for others
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" name="occasions" value="Catering/Large events" class="mr-2">
-                            Catering/Large events
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Pricing -->
-                <div>
-                    <label for="pricing" class="block text-gray-700 font-medium mb-1">Our "Purr-fect Bites Box" includes 6 bite-sized cookies, 6 mini muffins, and 6 tres leches cups for $38. Would this interest you?*</label>
-                    <select 
-                        id="pricing"
-                        name="pricing"
-                        required
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    >
-                        <option value="">Select an option</option>
-                        <option value="Yes, perfect price point">Yes, perfect price point</option>
-                        <option value="Yes, but I'd prefer a lower price">Yes, but I'd prefer a lower price</option>
-                        <option value="No, I'd prefer to order items separately">No, I'd prefer to order items separately</option>
-                        <option value="No, I'd prefer different combinations">No, I'd prefer different combinations</option>
-                    </select>
-                </div>
+            <div class="flex justify-center mt-8">
+                <button 
+                    type="submit"
+                    class="bg-black text-white px-8 py-2.5 rounded-lg hover:bg-gray-800 transition-colors text-base"
+                >
+                    Sign Up for Updates
+                </button>
             </div>
-
-            <button 
-                type="submit"
-                class="mt-6 w-auto min-w-[200px] mx-auto bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm sm:text-base"
-            >
-                Sign Up for Updates
-            </button>
         </form>
 
         <!-- Success Message (hidden by default) -->
@@ -231,7 +149,6 @@
             // Get form data
             const formData = new FormData();
             
-            // Add form entries with correct IDs
             formData.append('entry.443565211', document.getElementById('email').value); // Email
             formData.append('entry.877086558', [...document.querySelectorAll('input[name="treats"]:checked')].map(cb => cb.value).join(', ')); // Treats
             formData.append('entry.924523986', document.getElementById('size').value); // Size
@@ -239,8 +156,6 @@
             formData.append('entry.1751303409', document.getElementById('pricing').value); // Pricing
 
             try {
-                // Using your actual Google Form ID
-                
                 const response = await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdU27HNyerJHGxySql7epESTWwx_q2vTM_EC2CQvfGO62bCVg/formResponse', {
                     method: 'POST',
                     mode: 'no-cors',
@@ -256,3 +171,4 @@
         });
     </script>
 </body>
+</html>
