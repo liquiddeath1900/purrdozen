@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purrdozen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center bg-white">
+    <!-- Logo Container -->
+    <div class="mb-16 w-full max-w-md px-4">
+        <img 
+            src="assets/a-logo-for-the-purrdozen-bakingzxw-brand-fe_Yi00BvUISAaloJowPCtmIQ_L8sg2PFWQDif1ljLs9wtXQ.png" 
+            alt="Purrdozen Logo" 
+            class="w-full h-auto"
+        >
+    </div>
 
+    <!-- Signup Form -->
+    <div class="w-full max-w-md px-4">
+        <form id="signupForm" class="flex flex-col gap-4">
+            <div class="relative">
+                <input 
+                    type="email" 
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email for updates"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                    required
+                >
+            </div>
+            <button 
+                type="submit"
+                class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors w-full"
+            >
+                Get Notified
+            </button>
+        </form>
+        
+        <!-- Success Message (hidden by default) -->
+        <div id="successMessage" class="hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800 text-center">
+            Thanks for signing up! We'll let you know when we launch.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            
+            // TODO: Add Google Sheets submission code
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.remove('hidden');
+            
+            // Clear the form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
