@@ -169,19 +169,36 @@
             const occasionsSelected = [...document.querySelectorAll('input[name="occasions"]:checked')].map(cb => cb.value);
             const pricingSelected = document.querySelector('input[name="pricing"]:checked')?.value;
 
-            // Add form fields
-            formData.append('emailAddress', email);
-            formData.append('entry.1010425674', treatsSelected.join(', '));
-            formData.append('entry.1977766826', sizeSelected || '');
-            formData.append('entry.999455478', occasionsSelected.join(', '));
-            formData.append('entry.56908340', pricingSelected || '');
+            // Add form fields with correct entry IDs
+            formData.append('entry.1242827188', email);  // Email field
+            formData.append('entry.1408819047', treatsSelected.join(', '));  // Treats
+            formData.append('entry.480027978', sizeSelected || '');  // Size portions
+            formData.append('entry.1171689604', occasionsSelected.join(', '));  // Occasions
+            formData.append('entry.1882862774', pricingSelected || '');  // Pricing
 
             try {
-                // Submit to Google Forms
-                await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdU27HNyerJHGxySql7epESTWwx_q2vTM_EC2CQvfGO62bCVg/formResponse', {
+                // Create URL with parameters
+                const url = new URL('https://docs.google.com/forms/d/e/1FAIpQLSdU27HNyerJHGxySql7epESTWwx_q2vTM_EC2CQvfGO62bCVg/formResponse');
+                
+                // Add form fields with correct entry IDs
+                formData.append('entry.646599618', email);  // Email
+                formData.append('entry.1694498646', treatsSelected.join(', '));  // Treats
+                formData.append('entry.1042432188', sizeSelected || '');  // Size
+                formData.append('entry.438312140', occasionsSelected.join(', '));  // Occasions
+                formData.append('entry.196611527', pricingSelected || '');  // Pricing box question
+
+                // Append each field to URL
+                for (const [key, value] of formData.entries()) {
+                    url.searchParams.append(key, value);
+                }
+                
+                // Submit using no-cors mode
+                await fetch(url.toString(), {
                     method: 'POST',
                     mode: 'no-cors',
-                    body: formData
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    }
                 });
 
                 // Show success message
