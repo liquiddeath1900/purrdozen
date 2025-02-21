@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purrdozen</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background-color: #6C3B9B;
-        }
-    </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-start pt-8 pb-8">
+<body class="min-h-screen flex flex-col items-center justify-center bg-[#6C3B9B]">
     <!-- Logo Container -->
-    <div class="mb-8 w-full max-w-md px-4">
+    <div class="mb-8 w-full max-w-2xl px-4">
         <img 
             src="assets/a-logo-for-the-purrdozen-baking-brand-fe_Yi00BvUlSAaIoJowPCtmlQ_L8sg2PFWQDif1IjLs9wtXQ.png" 
             alt="Purrdozen Logo" 
@@ -22,132 +16,144 @@
         >
     </div>
 
-    <!-- Tagline -->
-    <div class="text-center mb-12 px-4">
-        <h1 class="text-white text-2xl font-bold mb-3">Purrfectly Baked, Just for You!</h1>
-        <p class="text-white text-lg mb-8">Sign up and tell us what treats you'd love to see! Every bite is made with purr-ision and lots of love! 🐱</p>
+    <!-- Taglines -->
+    <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-white mb-2">Purrfectly Baked, Just for You!</h1>
+        <p class="text-xl text-white opacity-90">Crafting paw-some treats that'll make you purr with delight!</p>
     </div>
 
     <!-- Signup Form -->
     <div class="w-full max-w-xl px-4">
         <form id="signupForm" class="bg-white rounded-lg p-6 shadow-lg">
-            <!-- Email -->
-            <div class="mb-6">
-                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address*</label>
-                <input 
-                    type="email" 
-                    id="email"
-                    name="email"
-                    required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                >
-            </div>
-
-            <!-- Treats Interest -->
-            <div class="mb-6">
-                <label class="block text-gray-700 font-medium mb-2">Which treats interest you most?*</label>
-                <div class="space-y-2">
-                    <label class="flex items-center">
-                        <input type="checkbox" name="treats" value="classic_cookies" class="mr-2">
-                        Classic Cookies (Chocolate Chip, Brown Butter Shortbread, Cardamom Snickerdoodle)
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="treats" value="artisanal_muffins" class="mr-2">
-                        Artisanal Muffins (Blueberry-Lemon, Double Chocolate, Chai-Spiced Apple)
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="treats" value="specialty_desserts" class="mr-2">
-                        Specialty Desserts (Tres Leches, Tiramisu)
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="treats" value="mix_match" class="mr-2">
-                        Mix-and-Match Boxes
-                    </label>
+            <div class="space-y-4">
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block text-gray-700 font-medium mb-1">Email Address*</label>
+                    <input 
+                        type="email" 
+                        id="email"
+                        name="email"
+                        required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        placeholder="your@email.com"
+                    >
                 </div>
-            </div>
 
-            <!-- Size Preference -->
-            <div class="mb-6">
-                <label class="block text-gray-700 font-medium mb-2">What size portions interest you most?*</label>
-                <select name="size" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                    <option value="">Choose an option</option>
-                    <option value="bite_sized">Bite-sized/Mini portions (perfect for sampling and sharing)</option>
-                    <option value="regular">Regular/Full-sized portions</option>
-                    <option value="both">Both - I'd mix it up depending on the occasion</option>
-                </select>
-            </div>
-
-            <!-- Ordering Occasions -->
-            <div class="mb-6">
-                <label class="block text-gray-700 font-medium mb-2">When would you order?</label>
-                <div class="space-y-2">
-                    <label class="flex items-center">
-                        <input type="checkbox" name="occasions" value="office" class="mr-2">
-                        Office/Team treats
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="occasions" value="celebrations" class="mr-2">
-                        Special celebrations (birthdays, events)
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="occasions" value="weekly" class="mr-2">
-                        Weekly personal treats
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="occasions" value="gifts" class="mr-2">
-                        Gifts for others
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="occasions" value="catering" class="mr-2">
-                        Catering/Large events
-                    </label>
+                <!-- Treats -->
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Which treats interest you most?*</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" name="treats" value="Classic Cookies" class="mr-2">
+                            Classic Cookies (Chocolate Chip, Brown Butter Shortbread, Cardamom Snickerdoodle)
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="treats" value="Artisanal Muffins" class="mr-2">
+                            Artisanal Muffins (Blueberry-Lemon, Double Chocolate, Chai-Spiced Apple)
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="treats" value="Specialty Desserts" class="mr-2">
+                            Specialty Desserts (Tres Leches, Tiramisu)
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="treats" value="Mix-and-Match Boxes" class="mr-2">
+                            Mix-and-Match Boxes
+                        </label>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Pricing Question -->
-            <div class="mb-6">
-                <label class="block text-gray-700 font-medium mb-2">Our "Purr-fect Bites Box" includes 6 bite-sized cookies, 6 mini muffins, and 6 tres leches cups for $38. Would this interest you?*</label>
-                <select name="pricing" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                    <option value="">Choose an option</option>
-                    <option value="perfect">Yes, perfect price point</option>
-                    <option value="lower">Yes, but I'd prefer a lower price</option>
-                    <option value="separate">No, I'd prefer to order items separately</option>
-                    <option value="different">No, I'd prefer different combinations</option>
-                </select>
+                <!-- Size -->
+                <div>
+                    <label for="size" class="block text-gray-700 font-medium mb-1">What size portions interest you most?*</label>
+                    <select 
+                        id="size"
+                        name="size"
+                        required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    >
+                        <option value="">Select an option</option>
+                        <option value="Bite-sized/Mini portions">Bite-sized/Mini portions (perfect for sampling and sharing)</option>
+                        <option value="Regular/Full-sized portions">Regular/Full-sized portions</option>
+                        <option value="Both">Both - I'd mix it up depending on the occasion</option>
+                    </select>
+                </div>
+
+                <!-- Occasions -->
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">For what occasions would you order?*</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" name="occasions" value="Office/Team treats" class="mr-2">
+                            Office/Team treats
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="occasions" value="Special celebrations" class="mr-2">
+                            Special celebrations (birthdays, events)
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="occasions" value="Weekly personal treats" class="mr-2">
+                            Weekly personal treats
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="occasions" value="Gifts for others" class="mr-2">
+                            Gifts for others
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="occasions" value="Catering/Large events" class="mr-2">
+                            Catering/Large events
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pricing -->
+                <div>
+                    <label for="pricing" class="block text-gray-700 font-medium mb-1">Our "Purr-fect Bites Box" includes 6 bite-sized cookies, 6 mini muffins, and 6 tres leches cups for $38. Would this interest you?*</label>
+                    <select 
+                        id="pricing"
+                        name="pricing"
+                        required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    >
+                        <option value="">Select an option</option>
+                        <option value="Yes, perfect price point">Yes, perfect price point</option>
+                        <option value="Yes, but I'd prefer a lower price">Yes, but I'd prefer a lower price</option>
+                        <option value="No, I'd prefer to order items separately">No, I'd prefer to order items separately</option>
+                        <option value="No, I'd prefer different combinations">No, I'd prefer different combinations</option>
+                    </select>
+                </div>
             </div>
 
             <button 
                 type="submit"
-                class="w-full bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+                class="mt-6 w-full bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
             >
-                Submit
+                Sign Up for Updates
             </button>
         </form>
-        
+
         <!-- Success Message (hidden by default) -->
-        <div id="successMessage" class="hidden mt-4 p-4 bg-white border border-green-200 rounded-lg text-green-800 text-center">
-            Thanks for signing up! We'll let you know when we start serving up our purrfect treats.
+        <div id="successMessage" class="hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800 text-center">
+            Thanks for your interest! We'll keep you updated on our launch. 🐱
         </div>
     </div>
 
     <script>
         document.getElementById('signupForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            const submitButton = this.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.textContent = 'Submitting...';
             
-            // Get all form data
+            // Get form data
             const formData = new FormData();
             
-            // Entry IDs from your Google Form
-            formData.append('emailAddress', document.querySelector('#email').value);  // Email
-            formData.append('entry.1010425674', [...document.querySelectorAll('input[name="treats"]:checked')].map(cb => cb.value).join(', '));  // Treats
-            formData.append('entry.1977766826', document.querySelector('select[name="size"]').value);  // Size preference
-            formData.append('entry.999455478', [...document.querySelectorAll('input[name="occasions"]:checked')].map(cb => cb.value).join(', '));  // Occasions
-            formData.append('entry.56908340', document.querySelector('select[name="pricing"]').value);  // Pricing
+            // Add form entries with correct IDs
+            formData.append('entry.443565211', document.getElementById('email').value); // Email
+            formData.append('entry.877086558', [...document.querySelectorAll('input[name="treats"]:checked')].map(cb => cb.value).join(', ')); // Treats
+            formData.append('entry.924523986', document.getElementById('size').value); // Size
+            formData.append('entry.186230675', [...document.querySelectorAll('input[name="occasions"]:checked')].map(cb => cb.value).join(', ')); // Occasions
+            formData.append('entry.1751303409', document.getElementById('pricing').value); // Pricing
 
             try {
+                // Using your actual Google Form ID
+                
                 const response = await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdU27HNyerJHGxySql7epESTWwx_q2vTM_EC2CQvfGO62bCVg/formResponse', {
                     method: 'POST',
                     mode: 'no-cors',
@@ -157,16 +163,8 @@
                 // Show success message
                 document.getElementById('successMessage').classList.remove('hidden');
                 this.reset();
-                
-                // Scroll to success message
-                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
-                
             } catch (error) {
-                console.error('Error:', error);
-                alert('There was an error submitting the form. Please try again.');
-            } finally {
-                submitButton.disabled = false;
-                submitButton.textContent = 'Submit';
+                console.error('Error submitting form:', error);
             }
         });
     </script>
