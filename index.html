@@ -156,11 +156,37 @@
             formData.append('entry.1751303409', document.getElementById('pricing').value); // Pricing
 
             try {
-                const response = await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdU27HNyerJHGxySql7epESTWwx_q2vTM_EC2CQvfGO62bCVg/formResponse', {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    body: formData
+                // Create the form submission URL with the data
+                const formUrl = new URL('https://docs.google.com/forms/d/e/1FAIpQLSdU27HNyerJHGxySql7epESTWwx_q2vTM_EC2CQvfGO62bCVg/formResponse');
+                
+                // Append each field to the URL
+                formUrl.searchParams.append('entry.443565211', document.getElementById('email').value);
+                
+                // Handle multiple checkbox selections for treats
+                const selectedTreats = [...document.querySelectorAll('input[name="treats"]:checked')];
+                selectedTreats.forEach(treat => {
+                    formUrl.searchParams.append('entry.877086558', treat.value);
                 });
+                
+                // Add size selection
+                formUrl.searchParams.append('entry.924523986', document.getElementById('size').value);
+                
+                // Handle multiple checkbox selections for occasions
+                const selectedOccasions = [...document.querySelectorAll('input[name="occasions"]:checked')];
+                selectedOccasions.forEach(occasion => {
+                    formUrl.searchParams.append('entry.186230675', occasion.value);
+                });
+                
+                // Add pricing selection
+                formUrl.searchParams.append('entry.1751303409', document.getElementById('pricing').value);
+
+                // Create a hidden iframe for submission
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+                
+                // Submit the form through the iframe
+                iframe.src = formUrl.toString();
 
                 // Show success message
                 document.getElementById('successMessage').classList.remove('hidden');
