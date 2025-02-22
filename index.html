@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purrdozen</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styling for iframe responsiveness */
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* For a 16:9 aspect ratio */
+        }
+        .responsive-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body class="min-h-screen flex flex-col items-center pt-4 sm:pt-6 md:pt-8 bg-[#6C3B9B] pb-8">
     <!-- Logo Container -->
@@ -31,11 +50,8 @@
             <iframe 
                 src="https://docs.google.com/forms/d/e/1FAIpQLSdU27HNyerJHGxySql7epESTWwx_q2vTM_EC2CQvfGO62bCVg/viewform?embedded=true" 
                 width="100%" 
-                height="800" 
-                frameborder="0" 
-                marginheight="0" 
-                marginwidth="0"
-                class="w-full"
+                height="1742" 
+                class="w-full border-0"
             >
                 Loading...
             </iframe>
